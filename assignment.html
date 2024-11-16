@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>College form</title>	
+	<style type="text/css">
+	    .bdr{border: 2px black solid;
+			padding: 20px;
+			margin-top: 20px;
+			width: fit-content;
+			background-color: lightyellow;}
+		.font{font: bold 20px Arial, sans-serif;
+			  color: darkblue;}	
+	</style>		
+</head>
+<body bgcolor="lightcyan"> 
+	<table>
+	<td>
+		<img src="logo.png" alt="p1" width="200" height="170">
+	    <img src="campus.jpg" alt="p2" width="350" height="170">
+	</td>
+	</table>
+	<form name="myform" onsubmit="return buttonpress();">
+	<div class="bdr">	
+	<p class="font">Enter your name :-
+	  <input type="text" name="name" id="name" size="30">
+	<p>
+	<p class="font">Enter your age :-
+	  <input type="number" name="age" id="age" size="5">
+	</p>
+	<p class="font">
+	  Gender :-
+	  <input type="radio" id="male" name="gender" value="male"><label for="male">Male</label>
+	  <input type="radio" id="female" name="gender" value="female"><label for="female">Female</label>	
+	</p>
+	<p class="font">
+	  Degree :-
+	  <input type="radio" id="bca" name="degree" value="bca"><label for="bca">BCA</label>
+	  <input type="radio" id="btech" name="degree" value="btech"><label for="btech">BTech</label>
+	  <input type="radio" id="bba" name="degree" value="bba"><label for="bba">BBA</label>
+	  <input type="radio" id="bcom" name="degree" value="bcom"><label for="bcom">BCom</label>
+	  <input type="radio" id="other" name="degree" value="other"><label for="others">Others</label>	
+	</p>
+	<p class="font">
+		Your Hobby :-
+		<input type="checkbox" name="play" value="yes">Play
+		<input type="checkbox" name="read" value="yes">Read
+		<input type="checkbox" name="write" value="yes">Write
+		<input type="checkbox" name="sing" value="yes">Sing
+		<input type="checkbox" name="dance" value="yes">Dance
+	</p>
+	<p class="font">Enter your SGPA :-</p>
+	<p class="font">
+		SGPA-1 :-
+	    <input type="text" name="sgpa1" id="sgpa1" size="5">
+	    SGPA-2 :-
+	    <input type="text" name="sgpa2" id="sgpa2" size="5">
+	    SGPA-3 :-
+	    <input type="text" name="sgpa3" id="sgpa3" size="5">
+	</p>
+	<p class="font">
+		Your CGPA :- <div id="cgpa">
+	</p>
+	<p align="center">
+		<input type="Submit" name="submit" value="OK" onclick="buttonpress()">
+	</p>
+	</div>
+  </form>	
+  <script type="text/javascript">
+  	function buttonpress() {
+  		var name = document.myform.name.value.trim();
+  		var n = 0;
+  		for (var i = 0; i < name.length; i++) {
+  			if (name.charCodeAt(i)>=65 || name.charCodeAt(i)<=91 || name.charCodeAt(i)==" ") {
+              n++;
+              break;
+  			} 
+  		}
+  		if (n==0) {
+  			alert("Name is invalid, re-enter in block letter!"); 
+  		}
+
+  		var age = document.myform.age.value;
+  		age = parseInt(age);
+  		if (age<19 || age>24) {
+  			alert("Age is out of range, re-enter!"); 
+  		}
+
+  		var s1 = document.myform.sgpa1.value;
+  		s1 = parseInt(s1);
+  		var s2 = document.myform.sgpa2.value;
+  		s2 = parseInt(s2);
+  		var s3 = document.myform.sgpa3.value;
+  		s3 = parseInt(s3);
+  		var cp = (s1+s2+s3)/3;
+  		document.getElementById('cgpa').innerHTML = cp;
+  		alert("CGPA :- "+cp);
+  	}
+  </script>
+</body>
+</html>
