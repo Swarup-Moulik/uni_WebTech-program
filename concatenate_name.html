@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concat the string</title>
+</head>
+<body>
+    <script>
+        var str = window.prompt("Enter a string :-");
+        var s1 = " ";
+        str = s1.concat(str);
+        for (let j = 0; j < str.lastIndexOf(" "); j++) 
+        {
+            if (str[j] == " ") 
+            {
+                document.write(str[j+1]+".");
+            }           
+        }
+        for (let i = str.lastIndexOf(" ")+1; i < str.length; i++) 
+        {
+            document.write(str[i]);
+        }
+    </script>
+</body>
+</html>

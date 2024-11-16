@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile no. Check</title>
+    <script>
+        function buttonpress() 
+        {
+            var str = myform.mobile.value;
+            var n = 0;
+            for (var i = 0; i <str.length; i++) 
+            {
+                if (!isNaN(str[i])) 
+                {
+                    n++;    
+                }
+            }
+            if (str.length == 10 && n==10 && str[0]>=6 && str[0]<=9) 
+            {
+                alert("Mobile no. is valid.");
+            } 
+            else 
+            {
+                alert("Mobile no. is invalid.");    
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="myform">
+        <p>Enter a mobile number :-</p>
+        <input type="text" name="mobile" size="20">
+    </form><br>
+    <input type="submit" name="checkbutton" value="Check" onclick="buttonpress()">
+</body>
+</html>

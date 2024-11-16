@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Caps Check</title>
+	<script type="text/javascript">
+		function buttonpress() {
+			var str = myform.namestr.value;
+			var n = 0;
+			for (var i = 0; i < str.length; i++) {
+				if (str.charCodeAt(i)<65 || str.charCodeAt(i)>91) {
+					n++;
+					break;
+				}
+			}
+			if (n==0) 
+				alert("Name is Valid");
+			else
+				alert("Name is Invalid");
+		}
+	</script>
+</head>
+<body>
+<form name="myform">
+	<p>Enter a name is caps</p>
+	<input type="text" name="namestr" size="20"/>
+	<input type="Submit" name="checkbutton" value="Check" onclick="buttonpress()">
+</form>
+</body>
+</html>

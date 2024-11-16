@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Age Check</title>
+	<script type="text/javascript">
+		function buttonpress() {
+			var age = document.myform.agestr.value;
+			if(isNaN(age) || age === "") {
+				alert("Give Age");
+			}
+			age = parseInt(age);
+			if(age<18 || age>30)
+			{
+				alert("Age is invalid");
+			}
+			else
+			{
+				alert("Age is valid");
+			}
+		}
+	</script>
+</head>
+<body>
+<form name="myform">
+	<p>Enter your age:-</p>
+	<input type="number" name="agestr" size="5"/>
+	<input type="Submit" name="checkbutton" value="Check" onclick="buttonpress()">
+</form>
+</body>
+</html>

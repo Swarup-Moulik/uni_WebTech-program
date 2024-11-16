@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Age Check</title>
+	<script type="text/javascript">
+		function buttonpress() {
+			var y1 = document.myform.yearstr1.value;
+			if(isNaN(y1) || y1 === "") {
+				alert("Give current year");
+			}
+			var y2 = document.myform.yearstr2.value;
+			if(isNaN(y2) || y2 === "") {
+				alert("Give the year to calculate age");
+			}
+			y1 = parseInt(y1);
+			y2 = parseInt(y2);
+			var y3 = y1 - y2;
+			alert("Current age :- "+y3);
+		}
+	</script>
+</head>
+<body>
+<form name="myform">
+	<p>Enter the current year:-</p>
+	<input type="number" name="yearstr1" size="10"/>
+	<p>Enter the year to calculate age:-</p>
+	<input type="number" name="yearstr2" size="10"/>
+	<p>
+	<input type="Submit" name="checkbutton" value="Check" onclick="buttonpress()">
+	</p>
+</form>
+</body>
+</html>
